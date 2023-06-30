@@ -1,30 +1,29 @@
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
+const mongoose = require("mongoose")
 
 const testiMonialSchema = mongoose.Schema(
-    {
-        name: {
-            type: String,
-            required: [true, "Please Enter Your Name."]
-        },
-        profession: {
-            type: String,
-            required: [true, "Please Enter Your Profession."]
-        },
-        message: {
-            type: String,
-            required: [true, "Please Enter Your Message."]
-        },
-        photoUrl: {
-            type: String,
-            required: [true, "Please Enter Your Photo URL."]
-        },
+  {
+    name: {
+      type: String,
+      required: [true, "Please Enter Your Name."],
     },
-    {
-        timestamps: true
-    }
-)
+    profession: {
+      type: String,
+      required: [true, "Please Enter Your Profession."],
+    },
+    message: {
+      type: String,
+      required: [true, "Please Enter Your Message."],
+    },
+    photoUrl: {
+      type: String,
+      required: [true, "Please Enter Your Photo URL."],
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const Testimonial = mongoose.model("Testimonial", testiMonialSchema)
+const Testimonial = mongoose.model("Testimonial", testiMonialSchema);
 
-module.exports = Testimonial
+module.exports = Testimonial;
