@@ -36,6 +36,27 @@ router.post("/user", async (req, res) => {
     res.status(201).send(result)
 })
 
+router.patch("/user", async (req, res) => {
+    const data = req.body
+
+    const eml = req.query.email
+
+    const result = await User.findOneAndUpdate({email: eml}, data)
+    
+    res.status(201).send(result)
+})
+
+router.get("/singleUser", async (req, res) => {
+    // const data = req.body
+
+    const eml = req.query.email
+    console.log(eml)
+
+    const result = await User.findOne({email: eml})
+    
+    res.status(201).send(result)
+})
+
 // User API End
 
 module.exports = router;
