@@ -50,10 +50,17 @@ router.get("/singleUser", async (req, res) => {
     // const data = req.body
 
     const eml = req.query.email
-    console.log(eml)
+    // console.log(eml)
 
     const result = await User.findOne({email: eml})
     
+    res.status(201).send(result)
+})
+
+router.get("/user", async (req, res) => {
+    const projection = { name: 1, email: 1, role: 1, photoUrl: 1, status: 1 };
+    const result = await User.find({}, projection)
+
     res.status(201).send(result)
 })
 

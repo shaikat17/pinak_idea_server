@@ -5,6 +5,9 @@ const userSchema = mongoose.Schema(
     name: {
       type: String,
     },
+    status: {
+      type: String, default: "Pending"
+    },
     email: {
       type: String,
     },
