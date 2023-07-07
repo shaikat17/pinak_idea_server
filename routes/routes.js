@@ -46,11 +46,19 @@ router.patch("/user", async (req, res) => {
     res.status(201).send(result)
 })
 
+router.patch("/user-status", async (req, res) => {
+
+    const id = req.query.id
+    const statusValue = req.body.status
+
+    const result = await User.findByIdAndUpdate(id, { status: statusValue }, { new: true });
+    
+    res.status(201).send(result)
+})
+
 router.get("/singleUser", async (req, res) => {
-    // const data = req.body
 
     const eml = req.query.email
-    // console.log(eml)
 
     const result = await User.findOne({email: eml})
     
