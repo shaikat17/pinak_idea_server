@@ -1,6 +1,7 @@
 const express = require("express")
 const Testimonial = require("../models/testiMonial")
 const User = require("../models/userModel")
+const GalleryImage = require("../models/galleryImages")
 
 const router = express.Router()
 
@@ -73,5 +74,17 @@ router.get("/user", async (req, res) => {
 })
 
 // User API End
+
+// Gallery Image API
+
+router.post("/gallery", async (req, res) => {
+
+    const data = ImageURL = req.body
+    const result = await GalleryImage.create(data)
+
+    res.status(201).send(result)
+})
+
+// Gallery Image API End
 
 module.exports = router;
