@@ -5,6 +5,14 @@ const GalleryImage = require("../models/galleryImages")
 
 const router = express.Router()
 
+// JWT
+router.post("/jwt", (req, res) => {
+    const user = req.body;
+    const token = jwt.sign(user, process.env.jwt_secret_key, { expiresIn: "1h" });
+
+    res.send({ token });
+  });
+
 // Testimonial API Start
 router.get("/testimonial", async(req, res) => {
     const result = await Testimonial.find({})
