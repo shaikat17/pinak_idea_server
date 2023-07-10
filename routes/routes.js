@@ -85,6 +85,12 @@ router.post("/gallery", async (req, res) => {
     res.status(201).send(result)
 })
 
+router.get("/gallery", async (req, res) => {
+    const result = await GalleryImage.find({})
+
+    res.status(201).send(result)
+})
+
 // Gallery Image API End
 
 module.exports = router;

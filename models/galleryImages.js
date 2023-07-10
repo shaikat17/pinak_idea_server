@@ -10,6 +10,10 @@ const galleryImagesSchema = mongoose.Schema(
       type: String,
       required: [true, "Please upload an image."],
     },
+    ImageName: {
+      type: String,
+      required: [true, "Please upload an image."],
+    },
   },
   {
     timestamps: true,
