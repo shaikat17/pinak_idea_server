@@ -68,7 +68,7 @@ router.post("/user", async (req, res) => {
     res.status(201).send(result)
 })
 
-router.patch("/user", async (req, res) => {
+router.patch("/user", verifyJWT, async (req, res) => {
     const data = req.body
 
     const eml = req.query.email
@@ -88,7 +88,7 @@ router.patch("/user-status", async (req, res) => {
     res.status(201).send(result)
 })
 
-router.get("/singleUser", async (req, res) => {
+router.get("/singleUser", verifyJWT, async (req, res) => {
 
     const eml = req.query.email
 
