@@ -97,7 +97,7 @@ router.get("/singleUser", async (req, res) => {
     res.status(201).send(result)
 })
 
-router.get("/user", async (req, res) => {
+router.get("/user", verifyJWT, async (req, res) => {
     const projection = { name: 1, email: 1, role: 1, photoUrl: 1, status: 1 };
     const result = await User.find({}, projection)
 
