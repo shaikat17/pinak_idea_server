@@ -88,7 +88,7 @@ router.patch("/user-status", async (req, res) => {
     res.status(201).send(result)
 })
 
-router.get("/singleUser", verifyJWT, async (req, res) => {
+router.get("/singleUser", async (req, res) => {
 
     const eml = req.query.email
 
