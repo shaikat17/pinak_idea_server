@@ -45,8 +45,10 @@ router.get("/testimonial", async(req, res) => {
 router.post("/testimonial", async (req, res) => {
     const data = req.body
 
+    // console.log(data)
     const result = await Testimonial.create(data)
     res.status(201).send(result)
+    // res.status(201).send({"msg": "Route Gets"})
 })
 
 router.post("/testimonial", async (req, res) => {

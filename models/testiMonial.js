@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const testiMonialSchema = mongoose.Schema(
   {
@@ -19,7 +19,8 @@ const testiMonialSchema = mongoose.Schema(
       required: [true, "Please Enter Your Photo URL."],
     },
     action: {
-      type: String, default: "Pending"
+      type: String,
+      default: "Pending",
     },
   },
   {
