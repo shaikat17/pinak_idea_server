@@ -55,9 +55,10 @@ router.patch("/testimonial-status", async (req, res) => {
 
     const id = req.query.id
     const statusValue = req.body.status
-
-    const result = await User.findByIdAndUpdate(id, { action: statusValue }, { new: true });
+    //  console.log(id, statusValue)
+    const result = await Testimonial.findByIdAndUpdate(id, { action: statusValue }, { new: true });
     
+    // console.log(result)
     res.status(201).send(result)
 })
 
