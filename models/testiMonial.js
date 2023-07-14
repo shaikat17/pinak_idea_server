@@ -18,6 +18,9 @@ const testiMonialSchema = mongoose.Schema(
       type: String,
       required: [true, "Please Enter Your Photo URL."],
     },
+    action: {
+      type: String, default: "Pending"
+    },
   },
   {
     timestamps: true,
