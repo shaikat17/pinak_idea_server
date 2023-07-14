@@ -51,10 +51,13 @@ router.post("/testimonial", async (req, res) => {
     // res.status(201).send({"msg": "Route Gets"})
 })
 
-router.post("/testimonial", async (req, res) => {
-    const data = req.body
+router.patch("/testimonial-status", async (req, res) => {
 
-    const result = await Testimonial.create(data)
+    const id = req.query.id
+    const statusValue = req.body.status
+
+    const result = await User.findByIdAndUpdate(id, { action: statusValue }, { new: true });
+    
     res.status(201).send(result)
 })
 
